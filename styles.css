@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+/* Ajuste do GIF para ocupar 100% da tela */
+#background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("background.gif") no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    transition: opacity 0.8s ease-out;
+}
+
+/* Oculta o GIF ao rolar para baixo */
+.hide-bg {
+    opacity: 0;
+}
+
+/* Estilização do conteúdo */
+.container {
+    position: relative;
+    text-align: center;
+    padding: 50px;
+    font-family: "Arial", sans-serif;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Posiciona a logo no centro */
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+/* Ajusta o tamanho da logo */
+#logo {
+    width: 600px; /* Ajuste conforme necessário */
+    display: block;
+    animation: vhsDistortion 0.2s infinite alternate, flicker 1.5s infinite alternate;
+}
+
+/* Posiciona o cronômetro abaixo da logo */
+#countdown {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Orbitron", sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    animation: vhsTremor 0.2s infinite alternate;
+}
+
+/* Player do YouTube visível após rolagem */
+#trailer-container {
+    position: absolute;
+    left: 50%;
+    top: 130vh; /* Ajuste para aparecer após rolagem */
+    transform: translate(-50%, 0);
+    text-align: center;
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.8s ease-out;
+}

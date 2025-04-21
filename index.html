@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homenagem a Manoel Loreno</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- GIF de fundo -->
+    <div id="background-gif"></div>
+
+    <!-- Contêiner da logo -->
+    <div class="logo-container">
+        <img src="logo-documentario.png" alt="Logo do Documentário" id="logo">
+    </div>
+
+    <!-- Cronômetro -->
+    <div id="countdown">Carregando...</div>
+
+    <!-- Áudio de fundo faroeste -->
+    <audio id="faroeste-audio" autoplay loop>
+        <source src="musica-faroeste.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="height: 100vh;"></div> <!-- Espaçador invisível para forçar rolagem -->
+
+    <!-- Player do YouTube para o trailer -->
+    <div id="trailer-container">
+        <iframe width="1550" height="720" 
+                src="https://www.youtube.com/embed/5nJC_bJ0AWs?si=mkOyj8Ygmge2gQrS" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
