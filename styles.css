@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
-/* Ajuste do GIF para ocupar 100% da tela */
+/* Ajuste do GIF para ocupar toda a área visível */
 #background-gif {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh; /* Garante que cubra toda a tela */
     background: url("background.gif") no-repeat center center fixed;
     background-size: cover;
     z-index: -1;
     transition: opacity 0.8s ease-out;
 }
 
-/* Oculta o GIF ao rolar para baixo */
+/* Oculta o fundo ao rolar para baixo */
 .hide-bg {
     opacity: 0;
 }
@@ -34,27 +34,31 @@
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Posiciona a logo no centro */
+/* 🔥 Centralizando corretamente a logo */
 .logo-container {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
 }
 
-/* Ajusta o tamanho da logo */
+/* Ajustando a logo para garantir centralização */
 #logo {
-    width: 600px;
+    width: 80vw; /* Ocupa 80% da largura da tela */
+    max-width: 1200px; /* Limita tamanho em telas grandes */
     display: block;
-    animation: vhsDistortion 0.2s infinite alternate, flicker 1.5s infinite alternate;
 }
 
 /* Posiciona o cronômetro abaixo da logo */
 #countdown {
     position: absolute;
-    top: 70%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Orbitron", sans-serif;
@@ -66,54 +70,112 @@
     animation: vhsTremor 0.2s infinite alternate;
 }
 
-/* Player do YouTube visível após rolagem */
+/* 🔥 Ajuste do GIF para cobrir TODA a página, incluindo rolagem */
+#background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("background.gif") no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* 🔥 Adiciona um fundo escuro atrás do texto para manter a legibilidade */
 #trailer-container {
-    position: absolute;
-    left: 50%;
-    top: 130vh; /* Ajuste para aparecer após rolagem */
-    transform: translate(-50%, 0);
-    text-align: center;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.8s ease-out;
-}
-
-/* Tornando o vídeo responsivo */
-#trailer-container iframe {
+    position: relative;
     width: 100%;
-    max-width: 800px;
-    height: auto;
-    aspect-ratio: 16 / 9;
+    text-align: center;
+    margin-top: 100px;
+    background: rgb(9, 0, 51); /* Fundo escuro semi-transparente */
+    padding: 50px;
+    border-radius: 10px;
 }
 
-/* 📌 Media Queries para telas menores */
-@media (max-width: 768px) {
-    .logo-container {
-        top: 40%;
-    }
+/* ✍️ Texto com efeito de escrita */
+#trailer-text {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgb(2, 0, 53);
+    white-space: pre-line;
+    max-width: 800px;
+    margin: auto;
+    min-height: 250px;
+}
 
+/* 🎬 Botão do trailer */
+#trailer-button {
+    display: none;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: red;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    transition: 0.3s ease-in-out;
+}
+
+/* Efeito ao passar o mouse */
+#trailer-button:hover {
+    background: darkred;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.9);
+}
+
+/* 🔥 Centraliza completamente o texto na tela */
+#trailer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Garante que o texto fique na área visível */
+}
+
+/* 🔥 Centraliza a logo corretamente */
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* 🔥 Melhorando responsividade */
+@media (max-width: 480px) {
     #logo {
-        width: 300px;
+        width: 95vw;
+        max-width: 350px;
     }
 
     #countdown {
-        font-size: 30px;
-        top: 60%;
-    }
-
-    #trailer-container iframe {
-        max-width: 100%;
-        height: auto;
+        font-size: 24px;
+        top: 65%;
     }
 }
 
+
+/* Ajuste global para garantir que o trailer ocupe uma área maior */
+#trailer-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+/* Melhoria para telas menores */
 @media (max-width: 480px) {
     .logo-container {
         top: 35%;
     }
 
     #logo {
-        width: 200px;
+        width: 150vw;
+        max-width: 350px;
     }
 
     #countdown {
