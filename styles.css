@@ -20,7 +20,13 @@
 
 /* Estilização do conteúdo */
 .container {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
     text-align: center;
     padding: 50px;
     font-family: "Arial", sans-serif;
@@ -31,7 +37,7 @@
 /* Posiciona a logo no centro */
 .logo-container {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -40,7 +46,7 @@
 
 /* Ajusta o tamanho da logo */
 #logo {
-    width: 600px; /* Ajuste conforme necessário */
+    width: 600px;
     display: block;
     animation: vhsDistortion 0.2s infinite alternate, flicker 1.5s infinite alternate;
 }
@@ -48,7 +54,7 @@
 /* Posiciona o cronômetro abaixo da logo */
 #countdown {
     position: absolute;
-    top: 75%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Orbitron", sans-serif;
@@ -67,6 +73,51 @@
     top: 130vh; /* Ajuste para aparecer após rolagem */
     transform: translate(-50%, 0);
     text-align: center;
-    opacity: 0; /* Inicialmente invisível */
+    opacity: 1;
+    visibility: visible;
     transition: opacity 0.8s ease-out;
+}
+
+/* Tornando o vídeo responsivo */
+#trailer-container iframe {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+/* 📌 Media Queries para telas menores */
+@media (max-width: 768px) {
+    .logo-container {
+        top: 40%;
+    }
+
+    #logo {
+        width: 300px;
+    }
+
+    #countdown {
+        font-size: 30px;
+        top: 60%;
+    }
+
+    #trailer-container iframe {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        top: 35%;
+    }
+
+    #logo {
+        width: 200px;
+    }
+
+    #countdown {
+        font-size: 24px;
+        top: 65%;
+    }
 }
